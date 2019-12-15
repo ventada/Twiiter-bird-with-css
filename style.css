@@ -1,0 +1,88 @@
+body {
+  background-image: linear-gradient(
+      to right,
+      rgba(147, 228, 217, 0.527),
+      rgb(176, 235, 181, 0.527)
+    );
+    
+  background-size: cover;
+  background-position: top;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bird {
+  display: block;
+  width: 100px;
+  height: 150px;
+  background-color: #0089ff;
+  border-radius: 50px 50px 100px 0;
+  transform: rotateZ(30deg);
+  position: relative;
+}
+
+.bird::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-left: 25px solid #ffca00;
+  transform: rotateZ(-30deg);
+  right: -29px;
+  top: 2px;
+}
+
+.bird::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 90px;
+  background-color: #006ecd;
+  border-radius: 50px 50px 100px 0;
+  transform: rotateZ(90deg);
+  top: 40px;
+  left: -20px;
+  animation: birdy 5s backwards;
+}
+
+.eye {
+  display: block;
+  width: 17px;
+  height: 17px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.eye::after {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 11px;
+  background-color: black;
+  border-radius: 10px;
+  position: absolute;
+  top: 3.5px;
+  right: 2px;
+}
+
+@keyframes birdy {
+  0% {
+  }
+
+  50% {
+    transform: rotateZ(30deg);
+  }
+  100% {
+  }
+}
